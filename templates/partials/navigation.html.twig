@@ -1,0 +1,9 @@
+<nav id="navigation">
+  <ul class="nav-links">
+    {%- for page in pages.children.visible() -%}
+      <li class="nav-link{%- if page.active() or page.activeChild() %} active{%- endif -%}">
+        <a href="{{- page.url() -}}">{{- page.menu() -}}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

@@ -1,0 +1,26 @@
+title: Blog
+'extends@':
+  type: default
+  context: blueprints://pages
+
+form:
+  validation: loose
+
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.thumbnail:
+              type: pagemediaselect
+              label: Thumbnail
+              size: medium
+              style: vertical
+              preview_images: true
+              ordering@: header.title

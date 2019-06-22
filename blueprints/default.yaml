@@ -1,0 +1,31 @@
+'extends@':
+  type: default
+  context: blueprints://pages
+
+form:
+  validation: loose
+
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        seo:
+          type: tab
+          title: SEO
+
+          fields:
+            header.metadata.description:
+              type: textarea
+              label: Description
+              help: Page description in about 156 characters
+              size: medium
+
+            header.metadata.ogImage:
+              type: filepicker
+              folder: '@self'
+              preview_images: true
+              label: Image
+              help: Image you will see when sharing your page on Facebook or Twitter
+              size: medium

@@ -1,0 +1,17 @@
+{%- extends 'partials/base.html.twig' -%}
+
+{%- block content -%}
+  <header class="page-intro">
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+         data-src="{{- page.media[page.header.thumbnail].cropResize(1920, 1080).url() -}}"
+         class="lazyload"
+         alt="{{- page.title() -}}">
+  </header>
+
+  <main class="page">
+    <section class="content">
+      <h1>{{- page.title() -}}</h1>
+      {{- page.content() -}}
+    </section>
+  </main>
+{%- endblock -%}

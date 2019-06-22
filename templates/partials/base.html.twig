@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="{{- grav.language.getActive|default(grav.config.site.default_lang) -}}" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    {%- set pageTitle = header.title ? header.title|escape ~ " — " : "" -%}
+    {%- set siteTitle = pageTitle ~ site.title|escape -%}
+    <title>{{- siteTitle -}}</title>
+
+    <meta name="description" content="{{- header.metadata.description|default(theme.seo_description) -}}">
+    <link rel="canonical" href="{{- page.url(true, true) -}}">
+    <link rel="alternate" type="application/rss+xml" href="{{- base_url -}}.rss">
+
+    {%- block stylesheets -%}
+      {%- do assets.addCss('https://fonts.googleapis.com/css?family=Lato&display=swap') -%}
+      {%- do assets.addCss('theme://css-compiled/main.min.css') -%}
+    {%- endblock -%}
+
+    {%- block assets deferred -%}
+      {{- assets.css()|raw -}}
+    {%- endblock -%}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{- url('theme://images/apple-touch-icon.png') -}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{- url('theme://images/favicon-32x32.png') -}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{- url('theme://images/favicon-16x16.png') -}}">
+    <link rel="manifest" href="{{- url('theme://images/site.webmanifest') -}}">
+    <link rel="mask-icon" color="#ffffff" href="{{- url('theme://images/safari-pinned-tab.svg') -}}">
+    <link rel="shortcut icon" href="{{- url('theme://images/favicon.ico') -}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="{{- url('theme://images/browserconfig.xml') -}}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Barebones">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    <meta name="application-name" content="Barebones">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:url" content="{{- page.url(true, true) -}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:title" content="{{- header.title -}}">
+    <meta property="og:description" content="{{- header.metadata.description|default(theme.seo_description) -}}">
+
+    {%- if theme.seo_image -%}
+      {%- set ogImageDefault = media['theme://assets/' ~ theme.seo_image|first.name] -%}
+    {%- endif -%}
+    {%- set ogImage = page.media[header.metadata.ogImage]|default(ogImageDefault) -%}
+    {%- if ogImage or ogImageDefault -%}
+      <meta property="og:image" content="{{- base_url_absolute ~ ogImage.url() -}}">
+      <meta property="og:image:width" content="{{- ogImage.width -}}">
+      <meta property="og:image:height" content="{{- ogImage.height -}}">
+    {%- endif -%}
+
+    <meta name="twitter:card" content="summary">
+    {% if theme.twitter_site is not empty %}
+      <meta name="twitter:site" content="{{- theme.twitter_site -}}">
+    {% endif %}
+    {% if theme.twitter_creator is not empty %}
+      <meta name="twitter:creator" content="{{- theme.twitter_creator -}}">
+    {% endif %}
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  </head>
+  <body class="{{- page.header.body_classes -}}">
+    {%- block navigation -%}
+      {%- include "partials/navigation.html.twig" -%}
+    {%- endblock -%}
+
+    {%- block content -%}{%- endblock -%}
+
+    {%- block footer -%}
+      {%- include "partials/footer.html.twig" -%}
+    {%- endblock -%}
+
+    {%- block javascript -%}
+      {%- do assets.addJs('theme://js/lazysizes.min.js') -%}
+    {%- endblock -%}
+    {{- assets.js('head')|raw -}}
+
+    {%- if theme.analytics -%}
+      {%- include 'partials/analytics.html.twig' -%}
+    {%- endif -%}
+  </body>
+</html>

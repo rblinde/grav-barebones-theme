@@ -1,0 +1,28 @@
+{
+  "name": "grav-barebones-theme",
+  "version": "1.0.0",
+  "description": "Very minimal Grav theme to speed up development",
+  "keywords": [
+    "gravcms",
+    "skeleton",
+    "barebones",
+    "theme"
+  ],
+  "homepage": "https://github.com/rblinde/grav-barebones-theme#readme",
+  "author": "rblinde (https://github.com/rblinde)",
+  "license": "MIT",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
