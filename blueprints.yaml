@@ -1,10 +1,16 @@
 name: Barebones
+slug: barebones
+type: theme
 version: 1.0.0
-description: Very minimal Grav theme to speed up development
+description: "Very minimal *Grav* theme to speed up development"
 icon:  wordpress
 author:
   name: rblinde
   url: https://github.com/rblinde
+homepage: https://github.com/rblinde/grav-barebones-theme
+keywords: barebones, theme, gravcms
+bugs: https://github.com/rblinde/grav-barebones-theme/issues
+license: MIT
 
 dependencies:
   - { name: grav, version: '>=1.6.0' }
@@ -16,21 +22,18 @@ form:
       type: section
       title: SEO
       underline: true
-
       fields:
         analytics:
           type: text
           label: Google Analytics
           help: Google Analytics code
           size: medium
-
         seo_description:
           type: textarea
           label: Description
           help: Default description in about 156 characters
           rows: 5
           size: medium
-
         seo_image:
           type: file
           label: Image
@@ -42,13 +45,11 @@ form:
             - .jpg
             - .jpeg
           size: medium
-
         twitter_site:
           type: text
           label: Twitter (Site)
           help: Name of Twitter account for site
           size: medium
-
         twitter_creator:
           type: text
           label: Twitter (Creator)
