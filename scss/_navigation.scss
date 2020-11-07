@@ -1,8 +1,30 @@
 #navigation {
-  padding: 1rem;
+  position: relative;
   display: flex;
   width: 100%;
+
+  background: $nav-bg-color;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
   max-width: $bp-xxl;
+}
+
+.home-link {
+  line-height: 1;
+  margin-left: 1rem;
+
+  @include bp-up($bp-md) {
+    margin-left: 2rem;
+  }
 }
 
 .nav-links {
@@ -12,10 +34,11 @@
   align-items: center;
 
   padding: 0;
-  margin: auto;
+  margin: 0;
   width: 100%;
 
   list-style: none;
+  font-size: $nav-font-size;
 
   @include bp-up($bp-sm) {
     justify-content: flex-end;
@@ -24,9 +47,13 @@
 
 .nav-link {
   display: inline-block;
-  padding: 0.5rem 0.75rem;
-}
+  margin: 0 2rem 0 0;
+  padding-top: ($nav-height - $nav-font-size) / 2 - $nav-border-size;
+  padding-bottom: ($nav-height - $nav-font-size) / 2;
+  border-top: $nav-border-size solid $nav-bg-color;
 
-.nav-link.active a {
-  text-decoration: underline;
+  &.active,
+  &:hover {
+    border-top-color: $nav-border-color;
+  }
 }
