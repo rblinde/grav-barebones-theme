@@ -11,17 +11,33 @@ form:
       active: 1
 
       fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+          fields:
+            header.thumbnail:
+              type: pagemediaselect
+              label: Thumbnail
+              style: vertical
+              preview_images: true
+              ordering@: header.title
+            content:
+              type: markdown
+              label: Content
+              style: vertical
+              validate:
+                type: textarea
+              ordering@: header.title
+
         seo:
           type: tab
           title: SEO
-
           fields:
             header.metadata.description:
               type: textarea
               label: Description
               help: Page description in about 156 characters
               size: medium
-
             header.metadata.ogImage:
               type: filepicker
               folder: '@self'
