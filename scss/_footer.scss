@@ -1,6 +1,12 @@
-footer {
+.footer {
+  width: 100%;
   margin: 0 auto;
   padding: 2rem 1rem;
+  background: $footer-bg-color;
+}
+
+.footer-container {
   width: 100%;
-  max-width: $bp-md;
+  max-width: $bp-lg;
+  margin: 0 auto;
 }
