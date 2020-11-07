@@ -17,7 +17,7 @@ form:
           fields:
             header.thumbnail:
               type: pagemediaselect
-              label: Thumbnail
+              label: THEME_BAREBONES.THUMBNAIL
               style: vertical
               preview_images: true
               ordering@: header.title
@@ -31,17 +31,17 @@ form:
 
         seo:
           type: tab
-          title: SEO
+          title: THEME_BAREBONES.SEO_TAB
           fields:
             header.metadata.description:
-              type: textarea
-              label: Description
-              help: Page description in about 156 characters
-              size: medium
+              type: text
+              label: THEME_BAREBONES.META_DESCRIPTION_LABEL
+              help: THEME_BAREBONES.META_DESCRIPTION_HELP
+              style: vertical
             header.metadata.ogImage:
               type: filepicker
+              label: THEME_BAREBONES.META_IMAGE_LABEL
+              help: THEME_BAREBONES.META_IMAGE_HELP
+              style: vertical
               folder: '@self'
               preview_images: true
-              label: Image
-              help: Image you will see when sharing your page on Facebook or Twitter
-              size: medium

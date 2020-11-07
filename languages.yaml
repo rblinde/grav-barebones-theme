@@ -1,0 +1,16 @@
+en:
+  THEME_BAREBONES:
+    SEO_TAB: Search Engine
+    THUMBNAIL: Thumbnail
+    META_DESCRIPTION_LABEL: Description
+    META_DESCRIPTION_HELP: Page description in less than 156 characters
+    META_IMAGE_LABEL: Image
+    META_IMAGE_HELP: Image you see sharing your page on social media
+nl:
+  THEME_BAREBONES:
+    SEO_TAB: Zoekmachine
+    THUMBNAIL: Miniatuur
+    META_DESCRIPTION_LABEL: Omschrijving
+    META_DESCRIPTION_HELP: Pagina omschrijving in minder dan 156 karakters
+    META_IMAGE_LABEL: Afbeelding
+    META_IMAGE_HELP: Afbeelding die je ziet als je de pagina deelt op sociale media
